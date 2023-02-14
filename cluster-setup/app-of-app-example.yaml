@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: xxx
+  namespace: argocd-system
+spec:
+  destination:
+    namespace: demo-argo-01-cluster
+    server: https://kubernetes.default.svc
+  project: xxx
+  source:
+    helm:
+      parameters:
+      - name: spec.destination.server
+        value: https://xxx:443
+    path: cluster-setup/app-of-app
+    repoURL: https://github.com/fabricekrebs/gitops
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

@@ -1,0 +1,25 @@
+###################################################################
+# Created Date: 08.02.2023 16:10
+# Author: Fabrice Krebs
+# -----
+# Last Modified: 14.02.2023 08:18
+# Modified By: Fabrice Krebs
+###################################################################
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+spec:
+  ingressClassName : nginx
+  rules:
+    - host: "nginx.test.com"
+      http:
+        paths:
+           - path: "/"
+             pathType: "Prefix"
+             backend:
+              service:
+                name:  nginx
+                port:
+                  number: 80

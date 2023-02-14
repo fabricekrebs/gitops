@@ -1,0 +1,17 @@
+###################################################################
+# Created Date: 08.02.2023 07:43
+# Author: Fabrice Krebs
+# -----
+# Last Modified: 09.02.2023 14:16
+# Modified By: Fabrice Krebs
+###################################################################
+
+traefik:
+  image:
+    name: registry.golgautier.net/proxy/library/traefik
+  logs:
+    general:
+      level: "debug"
+    access:
+      enabled: true
+    

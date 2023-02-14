@@ -1,0 +1,20 @@
+###################################################################
+# Created Date: 08.02.2023 08:36
+# Author: Fabrice Krebs
+# -----
+# Last Modified: 10.02.2023 08:18
+# Modified By: Fabrice Krebs
+###################################################################
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80

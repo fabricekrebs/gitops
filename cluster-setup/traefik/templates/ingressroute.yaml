@@ -1,0 +1,21 @@
+###################################################################
+# Created Date: 08.02.2023 16:10
+# Author: Fabrice Krebs
+# -----
+# Last Modified: 09.02.2023 16:38
+# Modified By: Fabrice Krebs
+###################################################################
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService

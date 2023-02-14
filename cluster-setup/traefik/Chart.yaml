@@ -1,0 +1,11 @@
+apiVersion: v2
+name: metallb
+description: Metallb configuration
+type: application
+version: 1.0.0
+appVersion: "20.8.0"
+
+dependencies:
+  - name: traefik
+    version: 20.8.0
+    repository: https://traefik.github.io/charts

@@ -1,0 +1,32 @@
+###################################################################
+# Created Date: 14.02.2023 08:54
+# Author: Fabrice Krebs
+# -----
+# Last Modified: 14.02.2023 10:02
+# Modified By: Fabrice Krebs
+###################################################################
+
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: xxx
+  namespace: argocd-system
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - {}
+  - name: '*'
+    namespace: '*'
+    server: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  orphanedResources:
+    ignore:
+    - {}
+    warn: true
+  sourceRepos:
+  - ""
+  - '*'

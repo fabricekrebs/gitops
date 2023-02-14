@@ -1,0 +1,14 @@
+###################################################################
+# Created Date: 10.02.2023 06:56
+# Author: Fabrice Krebs
+# -----
+# Last Modified: 14.02.2023 08:37
+# Modified By: Fabrice Krebs
+###################################################################
+
+apiVersion: v2
+name: configuration
+description: NKE Default cluster setup
+type: application
+version: 1.0.0
+appVersion: "0.13.7"

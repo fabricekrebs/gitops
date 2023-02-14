@@ -1,0 +1,28 @@
+###################################################################
+# Created Date: 08.02.2023 16:10
+# Author: Fabrice Krebs
+# -----
+# Last Modified: 14.02.2023 09:39
+# Modified By: Fabrice Krebs
+###################################################################
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-ingress
+  namespace: argocd-system
+spec:
+  project: {{ .Values.spec.project }}
+  destination:
+    namespace: nginx-ingress
+    server: {{ .Values.spec.destination.server }}
+  source:
+    repoURL: 'https://helm.nginx.com/stable'
+    targetRevision: 0.16.1
+    chart: nginx-ingress
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

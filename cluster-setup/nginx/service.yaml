@@ -1,0 +1,21 @@
+###################################################################
+# Created Date: 08.02.2023 08:43
+# Author: Fabrice Krebs
+# -----
+# Last Modified: 10.02.2023 08:20
+# Modified By: Fabrice Krebs
+###################################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  ports:
+  - name: nginx
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  type: ClusterIP
+  selector:
+    app: nginx
