@@ -8,10 +8,10 @@
 
 spec:
   destination:
-    server : https://10.42.6.90:443
+    server : https://10.55.70.90:443
 
   project: demo-argo-01
 
 metallb:
-  IPPool: 10.42.6.100-10.42.6.103
+  IPPool: 10.55.70.100-10.55.70.103
     
